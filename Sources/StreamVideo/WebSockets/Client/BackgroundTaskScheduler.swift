@@ -20,7 +20,7 @@ protocol BackgroundTaskScheduler {
     var isAppActive: Bool { get }
 }
 
-#if os(iOS)
+#if os(iOS) || os(visionOS)
 import UIKit
 
 class IOSBackgroundTaskScheduler: BackgroundTaskScheduler {

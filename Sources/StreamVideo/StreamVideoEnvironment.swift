@@ -74,7 +74,7 @@ extension StreamVideo {
                 // No background task scheduler exists for app extensions.
                 return nil
             } else {
-                #if os(iOS)
+                #if os(iOS) || os(visionOS)
                 return IOSBackgroundTaskScheduler()
                 #else
                 // No need for background schedulers on macOS, app continues running when inactive.

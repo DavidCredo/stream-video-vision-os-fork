@@ -5,7 +5,7 @@
 @testable import StreamVideo
 import XCTest
 
-#if os(iOS)
+#if os(iOS)|| os(visionOS)
 final class IOSBackgroundTaskScheduler_Tests: XCTestCase {
     func test_notifications_foreground() {
         // Given

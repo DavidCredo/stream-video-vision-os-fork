@@ -4,7 +4,7 @@
 
 import Foundation
 
-#if os(iOS)
+#if os(iOS) || os(visionOS)
 import UIKit
 #elseif os(macOS)
 import IOKit
@@ -44,7 +44,7 @@ extension SystemEnvironment {
     }
 
     private static var model: String {
-        #if os(iOS)
+        #if os(iOS) || os(visionOS)
         return deviceModelName
         #elseif os(macOS)
         return macModelIdentifier
@@ -68,7 +68,7 @@ extension SystemEnvironment {
     #endif
 
     private static var osVersion: String {
-        #if os(iOS)
+        #if os(iOS) || os(visionOS)
         return UIDevice.current.systemVersion
         #elseif os(macOS)
         return ProcessInfo.processInfo.operatingSystemVersionString
@@ -76,7 +76,7 @@ extension SystemEnvironment {
     }
 
     private static var os: String {
-        #if os(iOS)
+        #if os(iOS) || os(visionOS)
         return "iOS"
         #elseif os(macOS)
         return "MacOS"
@@ -84,7 +84,7 @@ extension SystemEnvironment {
     }
 
     private static var scale: String {
-        #if os(iOS)
+        #if os(iOS) || os(visionOS)
         return String(format: "%0.2f", UIScreen.main.scale)
         #elseif os(macOS)
         return "1.00"
